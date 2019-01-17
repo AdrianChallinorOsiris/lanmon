@@ -17,7 +17,7 @@ LAN runs off a standard JSON configuration file. The default file is **./lanmon.
 {
     "alert_mins" : 1,
     "alert" : "<<EMAIL-ADDRESS>",
-    "emailonrestore" : true,
+    "emailonrestore" : true,//! 
     "nodes" : [
         "192.168.1.10" ,
         "192.168.1.74",
@@ -103,7 +103,7 @@ PERFORMANCE, RESULTS, SECURITY, NONINFRINGEMENT, MERCHANTABILITY,
 INTEGRATION, QUIET ENJOYMENT, SATISFACTORY QUALITY, AND FITNESS FOR ANY
 PARTICULAR PURPOSE. THIS DISCLAIMER OF WARRANTY MAY NOT BE VALID IN SOME
 STATES. YOU MAY HAVE WARRANTY RIGHTS UNDER LAW WHICH MAY NOT BE WAIVED OR
-DISCLAIMED. ADOBE DOES NOT SEEK TO LIMIT YOUR WARRANTY RIGHTS TO ANY EXTENT
+DISCLAIMED. OSIRIS DOES NOT SEEK TO LIMIT YOUR WARRANTY RIGHTS TO ANY EXTENT
 NOT PERMITTED BY LAW.
 
 These exclusions and limitations will apply to the maximum extent permitted by applicable law, even if any
