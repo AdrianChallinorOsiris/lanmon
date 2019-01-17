@@ -84,6 +84,38 @@ cargo install --path .
 sudo setcap cap_net_raw+ep ~/.cargo/bin/lanmon
 '''
 
-This will 
+## LICENSE 
+LanMon is licenses un the GNU General Public License  v3.0 [GPL 3](https://www.gnu.org/licenses/gpl-3.0.en.html)
+
+## WARRANTY AND LIABILITY 
+
+The Software is made available to you free of charge.
+
+You may be entitled to warranties, conditions and terms that may not be excluded or limited by Osiris under
+law. 
+
+EXCEPT FOR THOSE NON-EXCLUDABLE WARRANTIES, CONDITIONS AND TERMS, THE SOFTWARE, OSIRIS CONSULTAMTS LTD ARE MADE
+AVAILABLE “AS IS.” EXCEPT FOR THOSE NON-EXCLUDABLE WARRANTIES, CONDITIONS AND TERMS, OSIRIS CONSULTAMTS LTD  
+MAKE NO WARRANTIES, CONDITIONS,
+REPRESENTATIONS, GUARANTEES OR TERMS (EXPRESS OR IMPLIED, WHETHER BY STATUTE,
+COMMON LAW, CUSTOM, USAGE OR OTHERWISE) AS TO ANY MATTER INCLUDING
+PERFORMANCE, RESULTS, SECURITY, NONINFRINGEMENT, MERCHANTABILITY,
+INTEGRATION, QUIET ENJOYMENT, SATISFACTORY QUALITY, AND FITNESS FOR ANY
+PARTICULAR PURPOSE. THIS DISCLAIMER OF WARRANTY MAY NOT BE VALID IN SOME
+STATES. YOU MAY HAVE WARRANTY RIGHTS UNDER LAW WHICH MAY NOT BE WAIVED OR
+DISCLAIMED. ADOBE DOES NOT SEEK TO LIMIT YOUR WARRANTY RIGHTS TO ANY EXTENT
+NOT PERMITTED BY LAW.
+
+These exclusions and limitations will apply to the maximum extent permitted by applicable law, even if any
+remedy fails its essential purpose. Osiris provides no support services for the Software.
+
+YOU ACKNOWLEDGE AND AGREE THAT: OSIRIS HAS NO EXPRESS OR IMPLIED OBLIGATION
+TO CONTINUE TO MAKE THE SOFTWARE OR ANY FEATURE THEREOF AVAILABLE NOR
+INTRODUCE ANY PRODUCTS OR SERVICES COMPATIBLE WITH THE SOFTWARE. 
+
+## LEGAL JURISTICTION 
+
+This contract will be governed by and construed in accordance of English law and shall be subject to the non-exclusive jurisdiction of the High Court in London.
+
 
 
