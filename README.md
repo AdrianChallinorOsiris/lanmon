@@ -78,8 +78,12 @@ $
 
 To build LanMon issue the commands 
 '''
-github clone 
+github clone https://github.com/AdrianChallinorOsiris/lanmon.git
 cd lanmon
-cargo build --release`
+cargo install --path .
+sudo setcap cap_net_raw+ep ~/.cargo/bin/lanmon
+'''
+
+This will 
 
 
