@@ -1,6 +1,6 @@
 [package]
 name = "lanmon"
-version = "0.1.0"
+version = "0.2.0"
 authors = ["adrian Challinor <adrian.challinor@osiris.co.uk>"]
 edition = "2018"
 license = "GPL-3.0"
@@ -14,7 +14,6 @@ A very simple application to monitor the health of nodes on a LAN
 
 [dependencies]
 clap = "2.32.0"
-config = "0.7"
 log = "0.4"
 fern = { version = "0.5", features = ["colored"] }
 chrono =  "0.4"
@@ -22,3 +21,5 @@ serde = "1.0.84"
 serde_json = "1.0.34"
 serde_derive = "1.0.84"
 fastping-rs = "0.1.1"
+toml = "0.4"
+

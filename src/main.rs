@@ -20,7 +20,7 @@
 //! where the **emailaddress** is, of course, your mail address. If this results in your receiving an email then you are good to go.
 //!
 //! ## Configuration
-//! LAN runs off a standard JSON configuration file. The default file is **./lanmon.json** and is of the form:
+//! LAN runs off a standard JSON or TOML configuration file. The default file is **./lanmon.json** and is of the form:
 //! ```
 //! {
 //!     "alert_mins" : 1,
@@ -38,6 +38,23 @@
 //!     ]
 //! }
 //! ```
+//!
+//! the equivalent in TOML is
+//! '''
+//! alert_mins = 1
+//! alert = "myemail@domain.com"
+//! emailonrestore = true
+//! nodes = [
+//!         "192.168.1.10" ,
+//!         "192.168.1.74",
+//!         "192.168.1.76",
+//!         "10.56.75.171",
+//!         "o1",
+//!         "o2",
+//!         "o3"
+//!     ]
+//! '''
+//!
 //! where:
 //! * **alert_mins** is the number of minutes a node needs to be offline before an alert will be generated. This is an integer positive number.
 //! * **alert** is the emain address to receive alerts
@@ -132,7 +149,6 @@
 #[macro_use] extern crate serde_derive;
 #[macro_use] extern crate clap;
 #[macro_use] extern crate log;
-extern crate config;
 extern crate fern;
 extern crate chrono;
 extern crate serde;
@@ -145,10 +161,9 @@ use fastping_rs::PingResult::{Idle, Receive};
 use chrono::prelude::*;
 
 use std::error::Error;
-use std::io::BufReader;
+use std::fs;
 use std::path::Path;
 use std::net::{ToSocketAddrs};
-use std::fs::File;
 use std::collections::HashMap;
 use std::time::{Instant, Duration};
 use std::{time};
@@ -390,13 +405,31 @@ fn main() {
 
 /// Read the JSON config file
 ///
-fn read_config<P: AsRef<Path>>(path: P) -> Result<Config, Box<Error>> {
-     // Open the file in read-only mode with buffer.
-    let file = File::open(path)?;
-    let reader = BufReader::new(file);
+fn read_config(filename: &str) -> Result<Config, Box<Error>> {
+    let path = Path::new(filename);
+    let ext = path.extension();
+    let contents = fs::read_to_string(path)
+        .expect("Something went wrong reading the file");
+
 
     // Read the JSON contents of the file as an instance of `Config`.
-    let c : Config = serde_json::from_reader(reader)?;
+    let c: Config =
+    match ext {
+        Some(ftype) => {
+            match ftype.to_str().unwrap() {
+                "toml" => toml::from_str(&contents)?,
+                "json" => serde_json::from_str(&contents)?,
+                _ => {
+                    let e1: Box<Error + Send + Sync> = From::from("File extension not supported");
+                    return Err(e1);
+                }
+            }
+        },
+        None => {
+            let e1: Box<Error + Send + Sync> = From::from("No file extension on config");
+            return Err(e1);
+        }
+    };
 
     // Return the `User`.
     Ok(c)

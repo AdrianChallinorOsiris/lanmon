@@ -1,0 +1,12 @@
+alert_mins = 1
+alert = "myemail@domain.com"
+emailonrestore = true
+nodes = [
+        "192.168.1.10" ,
+        "192.168.1.74",
+        "192.168.1.76",
+        "10.56.75.171",
+        "o1",
+        "o2",
+        "o3"
+    ]

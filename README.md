@@ -12,7 +12,7 @@ echo "TEST" | mail -s "Test email" <emailaddress>
 where the **emailaddress** is, of course, your mail address. If this results in your receiving an email then you are good to go.
 
 ## Configuration
-LAN runs off a standard JSON configuration file. The default file is **./lanmon.json** and is of the form:
+LAN runs off a standard JSON or TOML configuration file. The default file is **./lanmon.json** and is of the form:
 ```
 {
     "alert_mins" : 1,
@@ -30,6 +30,23 @@ LAN runs off a standard JSON configuration file. The default file is **./lanmon.
     ]
 }
 ```
+
+the equivalent in TOML is
+'''
+alert_mins = 1
+alert = "myemail@domain.com"
+emailonrestore = true
+nodes = [
+        "192.168.1.10" ,
+        "192.168.1.74",
+        "192.168.1.76",
+        "10.56.75.171",
+        "o1",
+        "o2",
+        "o3"
+    ]
+'''
+
 where:
 * **alert_mins** is the number of minutes a node needs to be offline before an alert will be generated. This is an integer positive number.
 * **alert** is the emain address to receive alerts
