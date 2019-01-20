@@ -32,7 +32,7 @@ LAN runs off a standard JSON or TOML configuration file. The default file is **.
 ```
 
 the equivalent in TOML is
-'''
+```
 alert_mins = 1
 alert = "myemail@domain.com"
 emailonrestore = true
@@ -45,7 +45,7 @@ nodes = [
         "o2",
         "o3"
     ]
-'''
+```
 
 where:
 * **alert_mins** is the number of minutes a node needs to be offline before an alert will be generated. This is an integer positive number.
