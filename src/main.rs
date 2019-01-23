@@ -348,7 +348,7 @@ fn main() {
     };
 
     // Getting nodes
-    debug!("Setting up notes");
+    debug!("Setting up nodes");
     let mut nodes = HashMap::new();
     for name in config.nodes {
         match to_ip(&name) {
